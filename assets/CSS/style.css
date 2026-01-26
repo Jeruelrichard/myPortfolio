@@ -4,10 +4,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-image: url('../images/bgImg1.png') /*var(--main-color)*/;
+  background: var(--white-color);
   color: var(--second-color);
   font-family: Arial;
   line-height: 1.3;
@@ -25,7 +26,7 @@ header {
   top: 0;
   height: 4em;
   width: inherit;
-  /*z-index: 10*/;
+  z-index: 10;
 }
 
 nav {
@@ -50,10 +51,32 @@ header nav ul li a {
   color: var(--main-color);
   text-decoration: none;
   font-size: 20px;
+  position: relative;
 }
 
 header nav ul li a:hover {
-  color: var(--third-color);
+  position: relative;
+}
+
+header nav ul li a:hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--third-color);
+  top: 2rem;
+  left: 0;
+  transition: 0.3s ease-in;
+}
+
+.activeLink::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--third-color);
+  top: 2rem;
+  left: 0;
 }
 
 header .jrLogo {
@@ -62,18 +85,45 @@ header .jrLogo {
   width: 40px;
   align-self: center;
   object-fit: cover;
+  /* border: 1px solid red; */
 }
 
 header .jrLogo img {
   height: 40px;
   width: 40px;
   border-radius: 50%;
+  border: 2px solid var(--white-color)
 }
 
 .navLinks {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+#theme-switch {
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--third-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  margin-top: 10px;
+}
+
+#theme-switch i:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch i:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch i:last-child {
+  display: block;
 }
 
 /*MAIN*/
@@ -83,6 +133,7 @@ main {
 }
 
 /*SECTIONS*/
+/* HOME */
 
 .homeSect {
   /* border: 1px solid blue;*/
@@ -91,6 +142,7 @@ main {
   height: 100vh;
   padding-right: 60px;
   padding-left: 10px;
+  background-image: var(--bg-image);
 }
 
 .homeDeets {
@@ -120,13 +172,13 @@ main {
   font-size: 17px;
 }
 
-.homeDeets a {
+.homeDeets .ctaBtn {
   text-decoration: none;
   display: inline-block;
   margin-top: 20px;
   color: var(--white-color);
   background-color: var(--third-color);
-  border-radius: 2px;
+  border-radius: 5px;
   width: 15%;
   padding: 10px;
   font-size: 17px;
@@ -134,12 +186,50 @@ main {
   text-align: center;
 }
 
-.homeDeets a:hover {
+.ctaBtn2 {
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 10px;
   color: var(--third-color);
-  background: var(--second-color);
-  transition: 0.3s ease-in;
-  transform: scale(1.05);
+  background-color: transparent;
+  border: 0.5px solid var(--third-color);
+  border-radius: 5px;
+  width: 22%;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.homeDeets .ctaBtn:hover {
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+}
+
+.ctaBtn2:hover {
+  background: var(--third-color);
+  color: var(--white-color);
+  transition: 0.3s ease-in;
+  box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+}
+
+.homeSocials {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0;
+  gap: 30px;
+}
+
+.homeSocials a {
+  text-decoration: none;
+  color: var(--second-color);
+  font-size: 25px;
+}
+
+.homeSocials a:hover {
+  color: var(--third-color);
+  transition: 0.3s ease-in;
+  transform: scale(1.2);
 }
 
 #homeImg {
@@ -153,6 +243,117 @@ main {
   /* border: 1px solid purple; */
 }
 
+/* ABOUT */
+
+.abtSect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  height: 100vh;
+  background: var(--main-color);
+}
+
+.abtSect h2 {
+  font-size: 2.5rem;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.abtSect h2::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 4px;
+  background: var(--third-color);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.abtSect p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--paragraph-color);
+  margin-top: 30px;
+  width: 60%;
+  justify-self: center;
+}
+
+.abtSect span {
+  color: var(--second-color);
+}
+
+/* SKILLS */
+
+.skillSect {
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  height: 100vh;
+  background-image: var(--plain-bg-img);
+}
+
+.skillSect h2 {
+  font-size: 2.5rem;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.skillSect h2::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 4px;
+  background: var(--third-color);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.skillsCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* border: 1px solid yellow; */
+  padding: 2rem;
+  gap: 30px;
+  width: 70%;
+  margin: 20px;
+}
+
+.skillsCards .card {
+  background: var(--second-color);
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  border-radius: 5px;
+}
+
+.skillsCards .card:hover {
+  box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px) rotate(-5deg);
+  transition: 0.3s ease-in;
+}
+
+.skillsCards .card i {
+  font-size: 6rem;
+  margin-top: 20px;
+  color: var(--main-color);
+}
+
+.skillsCards .card h3 {
+  color: var(--main-color);
+}
+
+/* FOOTER */
 
 
 footer {

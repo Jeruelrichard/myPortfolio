@@ -1,7 +1,21 @@
 :root {
     --main-color: rgb(237, 241, 253);
-    --second-color: black;
+    --second-color: #1e2436;
     --third-color: royalblue;
     --box-shadow: rgba(255, 255, 255, 0.25);
     --white-color: white;
+    --bg-image: url('../images/bgImg1.png');
+    --paragraph-color: #252a3a;
+    --plain-bg-img: url('../images/plainBgImg1.png');
+}
+
+.darkmode {
+    --main-color: #1e2436;
+    --second-color: rgb(237, 241, 253);
+    --third-color: royalblue;
+    --box-shadow: rgba(0, 0, 0, 0.25);
+    --white-color: black;
+    --bg-image: url('../images/bgImg1dark.png');
+    --paragraph-color: #b8bac4;
+    --plain-bg-img: url('../images/plainBgImgdark.png');
 }
