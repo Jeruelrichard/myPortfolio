@@ -29,9 +29,9 @@
                 <i class="fa-solid fa-sun fa-1x"></i>
             </button>
 
-            <!--<div id="menuIcon">
+            <!-- <div id="navToggle" class="nav-toggle">
                 <i class="fa-solid fa-bars"></i>
-            </div>-->
+            </div> -->
         </nav>
     </header>
 
@@ -127,7 +127,7 @@
                             <span id="workLang">HTML</span> <span id="workLang">CSS</span> <span id="workLang">JS</span>
                         </div>
                         <div id="dash"></div>
-                        <a href="jersify.vercel.app" class="workBtn">View Project</a>
+                        <a href="https://jersify.vercel.app" target="_blank" class="workBtn">View Project</a>
                     </div>
                 </div>
 
@@ -142,7 +142,7 @@
                             <span id="workLang">HTML</span> <span id="workLang">CSS</span> <span id="workLang">JS</span>
                         </div>
                         <div id="dash"></div>
-                        <a href="futoportalclone.vercel.app" class="workBtn">View Project</a>
+                        <a href="https://futoportalclone.vercel.app" target="_blank" class="workBtn">View Project</a>
                     </div>
                 </div>
 
@@ -157,22 +157,22 @@
                             <span id="workLang">HTML</span> <span id="workLang">CSS</span> <span id="workLang">JS</span>
                         </div>
                         <div id="dash"></div>
-                        <a href="konetmydoc.vercel.app" class="workBtn">View Project</a>
+                        <a href="https://konetmydoc.vercel.app" target="_blank" class="workBtn">View Project</a>
                     </div>
                 </div>
 
                 <div class="workCard">
                     <div class="workImg">
-                        <img src="assets/images/JERSIFY.png">
+                        <img src="assets/images/personalPortfolio.png">
                     </div>
                     <div class="workDeets">
-                        <h3>Jersify</h3>
-                        <p>E-commerce Store for selling jerseys.</p>
+                        <h3>Portfolio Site</h3>
+                        <p>A portfolio site showing one's skills and work done.</p>
                         <div class="workTools">
                             <span id="workLang">HTML</span> <span id="workLang">CSS</span> <span id="workLang">JS</span>
                         </div>
                         <div id="dash"></div>
-                        <a href="jersify.vercel.app" class="workBtn">View Project</a>
+                        <a href="#home" class="workBtn">View Project</a>
                     </div>
                 </div>
             </div>
@@ -183,9 +183,9 @@
             <h4>Have a project in mind? Let's discuss how we can work together to bring your ideas to life.</h4>
             <div class="contactDeets">
                 <div class="contactReach">
-                    <i>okemdinach383@gmail.com</i>
-                    <i>+234 706 771 0680</i>
-                    <i>Owerri, Nigeria</i>
+                    <i class="fa-solid fa-location-dot"></i><p>Owerri, Nigeria</p>
+                    <i class="fa-solid fa-phone"></i><p>+234 706 771 0680</p>
+                    <i class="fa-regular fa-envelope"></i><p>okemdinach383@gmail.com</p>
                     <div id="contactSocials">
                         <a href="https://www.linkedin.com/in/jeruel-richard-444710292?utm_campaign=share_via&utm_content=profile" target="_blank">
                             <i class="fa-brands fa-linkedin"></i>
@@ -201,20 +201,22 @@
 
                 <div class="contactFormDiv">
                     <form id="contactForm">
-                        <input type="text" name="name" placeholder="Your Name" required><br><br>
+                        <input type="text" name="Name" placeholder="Your Name" required><br><br>
 
-                        <input type="email" name="email" placeholder="yourEmail@example.com" required><br><br>
+                        <input type="email" name="Email" placeholder="yourEmail@example.com" required><br><br>
 
-                        <input type="tel" name="phone number" placeholder="Your Phone No." required><br><br>
+                        <input type="tel" name="Phone Number" placeholder="Your Phone No." required><br><br>
 
-                        <textarea name="Description" cols="0" rows="10" placeholder="Project Description" required></textarea><br><br>
+                        <textarea name="Project Description" cols="0" rows="10" placeholder="Project Description" required></textarea><br><br>
 
-                        <input id="submit" type="submit" value="Send Message">
+                        <button id="submit" type="submit">Send Message</button>
                     </form>
                 </div>
 
             </div>
         </section>
+
+        <div id="toast" class="toast">Message sent successfully 🚀</div>
     </main>
 
     <footer>
@@ -223,6 +225,7 @@
 
     <!--===== SCROLL REVEAL =====-->
     <script src="https://unpkg.com/scrollreveal"></script>
+
     <!--===== JS FILE =====-->
     <script src="assets/JS/script.js"></script>
 </body>

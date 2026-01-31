@@ -19,6 +19,29 @@ const disableDarkmode =() => {
     localStorage.setItem('darkmode', null)
 }
 
+/*===== MENU SHOW =====*/ 
+const showMenu = (toggleId, navId) =>{
+    const toggle = document.getElementById(toggleId),
+    nav = document.querySelector(navId)
+
+    if(toggle && nav){
+        toggle.addEventListener('click', ()=>{
+            nav.classList.toggle('show')
+        })
+    }
+}
+showMenu('navToggle','navLinks')
+
+/*==================== REMOVE MENU MOBILE ====================*/
+const navLink = document.querySelectorAll('.navLink')
+
+function linkAction(){
+    const navMenu = document.querySelector('.navLinks')
+    // When we click on each navLink, we remove the show-menu class
+    navMenu.classList.remove('show')
+}
+navLink.forEach(n => n.addEventListener('click', linkAction))
+
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
 
@@ -49,7 +72,45 @@ const sr = ScrollReveal({
 //     reset: true
 });
 
-sr.reveal('.homeDeets, .abtDeets, .card',{}); 
+sr.reveal('.homeDeets, .abtDeets, .skillsCards',{}); 
 sr.reveal('.homeImg',{delay: 400}); 
 sr.reveal('.homeSocials',{ interval: 200}); 
-sr.reveal('.workCard, .contact__input',{interval: 200}); 
+sr.reveal('.workContainer, .contactFormDiv',{interval: 200});
+
+
+//CONTACT FORM SCRIPT
+const form = document.getElementById("contactForm");
+const toast = document.getElementById("toast");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    // Example using Formspree endpoint
+    const response = await fetch("https://formspree.io/f/mlgnkyoo", {
+      method: "POST",
+      body: formData,
+      headers: {
+        "Accept": "application/json"
+      }
+    });
+
+    if (response.ok) {
+      form.reset();
+      showToast("Message sent successfully 🚀");
+    } else {
+      showToast("Something went wrong ❌");
+    }
+});
+
+function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 3000);
+}
+
+//NEED TO WORK ON NAVLINKS RESPONSIVENESS

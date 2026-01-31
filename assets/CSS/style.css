@@ -217,7 +217,7 @@ header .jrLogo img {
   display: flex;
   flex-direction: row;
   position: absolute;
-  bottom: 0;
+  bottom: 80px;
   gap: 30px;
 }
 
@@ -494,7 +494,7 @@ header .jrLogo img {
   min-height: 100vh;
   background-image: var(--plain-bg-img);
   scroll-margin-top: 4em;
-  border: 1px solid green; 
+  /* border: 1px solid green;  */
 }
 
 .contactSect h2 {
@@ -517,11 +517,11 @@ header .jrLogo img {
 
 .contactDeets {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding-left: 100px;
   padding-right: 100px;
-  margin-top: 30px;
-  border: 1px solid yellow;
+  margin-top: 70px;
+  /* border: 1px solid yellow; */
   width: 100%;
 }
 
@@ -529,12 +529,58 @@ header .jrLogo img {
   display: flex;
   flex-direction: column;
   width: 40%;
-  border: 1px solid red;
-  gap: 20px;
+  /* border: 1px solid red; */
+  gap: 10px;
+}
+
+.contactReach i {
+  font-size: 20px;
+  background: var(--third-color);
+  color: var(--second-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50%;
+  box-shadow: var(--second-box-shadow);
+}
+
+.contactReach p {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--second-color);
+  /* border: 1px solid blue; */
+}
+
+#contactSocials {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+#contactSocials a {
+  text-decoration: none;
+}
+
+#contactSocials i {
+  color: var(--second-color);
+  font-size: 30px;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#contactSocials i:hover {
+  color: var(--third-color);
+  transition: 0.3s ease-in;
+  transform: scale(1.2);
 }
 
 .contactFormDiv {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 40%;
   background: var(--main-color);
   padding: 20px;
@@ -554,6 +600,9 @@ header .jrLogo img {
   background: var(--second-color);
   color: var(--main-color);
   cursor: pointer;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
 }
 
 .contactFormDiv #submit:hover {
@@ -562,6 +611,26 @@ header .jrLogo img {
   background: var(--third-color);
 }
 
+/* TOAST */
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--second-color);
+  color: var(--main-color);
+  padding: 14px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* FOOTER */
 
