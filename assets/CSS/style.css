@@ -126,6 +126,18 @@ header .jrLogo img {
   display: block;
 }
 
+/* Hide hamburger menu on desktop */
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+  align-self: center;
+}
+
+.nav-toggle i {
+  font-size: 24px;
+  color: var(--main-color);
+}
+
 /*MAIN*/
 
 /* main {
@@ -655,4 +667,335 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* ===== MOBILE RESPONSIVE STYLES ===== */
+/* Mobile Styles: 320px - 767px */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  
+  /* Show hamburger menu */
+  .nav-toggle {
+    display: flex;
+    z-index: 100;
+  }
+  
+  /* Hide navLinks by default on mobile */
+  .navLinks {
+    position: fixed;
+    top: 4em;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 4em);
+    background: var(--second-color);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 2rem;
+    transition: left 0.3s ease-in-out;
+    z-index: 99;
+  }
+  
+  /* Show navLinks when menu is open */
+  .navLinks.show {
+    left: 0;
+  }
+  
+  .navLinks ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .navLinks ul li {
+    display: block;
+    margin: 0;
+  }
+  
+  .navLinks ul li a {
+    font-size: 1.4rem;
+  }
+  
+  /* Header adjustments */
+  nav {
+    margin: 0 20px;
+  }
+  
+  /* Home Section */
+  .homeSect {
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 2rem;
+    height: auto;
+    min-height: 100vh;
+    gap: 1rem;
+  }
+  
+  .homeDeets {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    order: 1;
+  }
+  
+  .homeDeets h3 {
+    font-size: 1.8rem;
+  }
+  
+  .homeDeets h1 {
+    font-size: 2.2rem;
+  }
+  
+  .homeDeets p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  
+  .ctaBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .homeDeets .ctaBtn {
+    width: 45%;
+    margin-top: 15px;
+    font-size: 14px;
+    padding: 8px;
+  }
+  
+  .ctaBtn2 {
+    width: 45%;
+    margin-left: 0;
+    margin-top: 15px;
+    font-size: 14px;
+    padding: 8px;
+  }
+  
+  .homeSocials {
+    position: relative;
+    bottom: 0;
+    margin-top: 50px;
+    justify-content: center;
+    order: 2;
+    gap: 50px;
+  }
+
+  .homeSocials a {
+    font-size: 30px;
+  }
+  
+  #homeImg {
+    justify-content: center;
+    margin-top: 1.5rem;
+    order: 3;
+  }
+  
+  #homeImg img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    border: 4px solid var(--third-color);
+  }
+  
+  /* About Section */
+  .abtSect {
+    height: auto;
+    padding: 40px 15px;
+  }
+  
+  .abtSect h2 {
+    font-size: 1.8rem;
+  }
+  
+  .abtSect p {
+    width: 95%;
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+  
+  /* Skills Section */
+  .skillSect {
+    height: auto;
+    padding: 40px 15px;
+  }
+  
+  .skillSect h2 {
+    font-size: 1.8rem;
+  }
+  
+  .skillsCards {
+    width: 100%;
+    padding: 1rem;
+    gap: 15px;
+  }
+  
+  .skillsCards .card {
+    width: 130px;
+    height: 150px;
+    gap: 20px;
+  }
+  
+  .skillsCards .card i {
+    font-size: 4rem;
+  }
+  
+  .skillsCards .card h3 {
+    font-size: 0.9rem;
+  }
+  
+  /* Work Section */
+  .workSect {
+    padding: 40px 15px;
+  }
+  
+  .workSect h2 {
+    font-size: 1.8rem;
+  }
+  
+  .workSect .workContainer {
+    padding: 1rem;
+    gap: 20px;
+  }
+  
+  .workCard {
+    width: 100%;
+    padding: 0.8rem;
+    overflow: hidden;
+  }
+  
+  .workDeets {
+    height: auto;
+  }
+  
+  .workDeets h3 {
+    font-size: 1.4rem;
+  }
+  
+  .workDeets p {
+    font-size: 0.85rem;
+  }
+  
+  .workTools {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .workDeets #workLang {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+  
+  .workDeets a.workBtn {
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+  
+  /* Contact Section */
+  .contactSect {
+    padding: 40px 15px;
+  }
+  
+  .contactSect h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contactSect h4 {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0 10px;
+  }
+  
+  .contactDeets {
+    flex-direction: column;
+    padding: 0 15px;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .contactReach {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Contact items: icon on left, text on right */
+  .contactReach > i,
+  .contactReach > p {
+    display: none;
+  }
+  
+  .contactReach {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, auto);
+    column-gap: 15px;
+    row-gap: 15px;
+    align-items: center;
+  }
+  
+  .contactReach i {
+    display: flex !important;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+  
+  .contactReach p {
+    display: block !important;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  
+  #contactSocials {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  #contactSocials i {
+    font-size: 25px;
+  }
+  
+  .contactFormDiv {
+    width: 100%;
+    padding: 15px;
+  }
+  
+  .contactFormDiv input,
+  .contactFormDiv textarea {
+    font-size: 0.9rem;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+  
+  footer p {
+    text-align: center;
+  }
+  
+  /* Toast positioning for mobile */
+  .toast {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(20px);
+    width: 90%;
+    text-align: center;
+  }
+  
+  .toast.show {
+    transform: translateX(-50%) translateY(0);
+  }
 }

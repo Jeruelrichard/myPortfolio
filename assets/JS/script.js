@@ -27,18 +27,34 @@ const showMenu = (toggleId, navId) =>{
     if(toggle && nav){
         toggle.addEventListener('click', ()=>{
             nav.classList.toggle('show')
+            // Toggle hamburger icon between bars and X
+            const icon = toggle.querySelector('i')
+            if(nav.classList.contains('show')){
+                icon.classList.remove('fa-bars')
+                icon.classList.add('fa-xmark')
+            } else {
+                icon.classList.remove('fa-xmark')
+                icon.classList.add('fa-bars')
+            }
         })
     }
 }
-showMenu('navToggle','navLinks')
+showMenu('navToggle','.navLinks')
 
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll('.navLink')
 
 function linkAction(){
     const navMenu = document.querySelector('.navLinks')
+    const toggle = document.getElementById('navToggle')
     // When we click on each navLink, we remove the show-menu class
     navMenu.classList.remove('show')
+    // Reset hamburger icon
+    if(toggle){
+        const icon = toggle.querySelector('i')
+        icon.classList.remove('fa-xmark')
+        icon.classList.add('fa-bars')
+    }
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
