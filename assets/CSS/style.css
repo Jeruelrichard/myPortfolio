@@ -999,3 +999,174 @@ footer a:hover {
     transform: translateX(-50%) translateY(0);
   }
 }
+
+/* ===== TABLET RESPONSIVE STYLES ===== */
+/* Tablet Styles: 768px - 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  
+  /* Hide hamburger menu on tablet */
+  .nav-toggle {
+    display: none;
+  }
+  
+  /* Navigation adjustments */
+  nav {
+    margin: 0 20px;
+  }
+  
+  header nav ul li {
+    margin: 0 0.5rem;
+  }
+  
+  header nav ul li a {
+    font-size: 16px;
+  }
+  
+  /* Home Section */
+  .homeSect {
+    padding: 30px 40px;
+    gap: 20px;
+  }
+  
+  .homeDeets {
+    width: 55%;
+  }
+  
+  .homeDeets h3 {
+    font-size: 2.2rem;
+  }
+  
+  .homeDeets h1 {
+    font-size: 2.8rem;
+  }
+  
+  .homeDeets p {
+    font-size: 15px;
+  }
+  
+  .homeDeets .ctaBtn {
+    width: 30%;
+    font-size: 15px;
+  }
+  
+  .ctaBtn2 {
+    width: 35%;
+    font-size: 15px;
+  }
+  
+  .homeSocials {
+    bottom: 50px;
+    gap: 20px;
+  }
+  
+  #homeImg {
+    align-items: flex-end;
+  }
+  
+  #homeImg img {
+    height: 80%;
+  }
+  
+  /* About Section */
+  .abtSect {
+    height: auto;
+    padding: 50px 30px;
+  }
+  
+  .abtSect h2 {
+    font-size: 2rem;
+  }
+  
+  .abtSect p {
+    width: 80%;
+    font-size: 0.95rem;
+  }
+  
+  /* Skills Section */
+  .skillSect {
+    height: auto;
+    padding: 50px 30px;
+  }
+  
+  .skillSect h2 {
+    font-size: 2rem;
+  }
+  
+  .skillsCards {
+    width: 90%;
+    gap: 20px;
+  }
+  
+  .skillsCards .card {
+    width: 150px;
+    height: 170px;
+  }
+  
+  .skillsCards .card i {
+    font-size: 5rem;
+  }
+  
+  /* Work Section */
+  .workSect {
+    padding: 50px 30px;
+  }
+  
+  .workSect h2 {
+    font-size: 2rem;
+  }
+  
+  .workSect .workContainer {
+    gap: 20px;
+  }
+  
+  .workCard {
+    width: 45%;
+    overflow: hidden;
+  }
+  
+  .workDeets {
+    height: auto;
+  }
+  
+  .workDeets h3 {
+    font-size: 1.5rem;
+  }
+  
+  .workDeets a.workBtn {
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+  
+  /* Contact Section */
+  .contactSect {
+    padding: 50px 30px;
+  }
+  
+  .contactSect h2 {
+    font-size: 2rem;
+  }
+  
+  .contactSect h4 {
+    font-size: 1rem;
+  }
+  
+  .contactDeets {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .contactReach {
+    width: 45%;
+  }
+  
+  .contactFormDiv {
+    width: 50%;
+  }
+  
+  /* Footer */
+  footer {
+    font-size: 0.9rem;
+  }
+}
