@@ -103,7 +103,7 @@ form.addEventListener("submit", async (e) => {
 
     const formData = new FormData(form);
 
-    // Example using Formspree endpoint
+    //Using Formspree endpoint
     const response = await fetch("https://formspree.io/f/mlgnkyoo", {
       method: "POST",
       body: formData,
@@ -128,5 +128,3 @@ function showToast(message) {
       toast.classList.remove("show");
     }, 3000);
 }
-
-//NEED TO WORK ON NAVLINKS RESPONSIVENESS
